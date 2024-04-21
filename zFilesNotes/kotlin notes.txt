@@ -1,0 +1,7 @@
+https://play.kotlinlang.org/
+    online playground for playing with kotlin
+
+https://kotlinlang.org/docs/keyword-reference.html#operators-and-special-symbols
+    reserved keywords and documentation
+
+kotlin does not have primitive types, only objects
