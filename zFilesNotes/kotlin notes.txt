@@ -5,3 +5,83 @@ https://kotlinlang.org/docs/keyword-reference.html#operators-and-special-symbols
     reserved keywords and documentation
 
 kotlin does not have primitive types, only objects
+
+Any is the root of the Kotlin class hierarchy. Every Kotlin class has Any as a superclass.
+
+// ? marks a type as nullable
+    var profession : String? = "student"
+    profession = null
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
