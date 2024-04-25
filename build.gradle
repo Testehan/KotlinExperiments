@@ -1,0 +1,14 @@
+plugins {
+    id 'java'
+}
+
+group 'com.testehan'
+version 'kotlin-experiments'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+}

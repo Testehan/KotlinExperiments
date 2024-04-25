@@ -17,6 +17,13 @@ fun main() {
 
     println(dishwasher)
 
+    var userDan = User(1, "dante")
+    var userAna = User(2, "anita")
+
+    println(userDan)
+    println(userAna.toString())
+    println(userAna == userDan)
+    println(userAna == userAna)
 
 }
                     // this is how you specify the constructor..as the IDE tells you, you can remove the
@@ -49,6 +56,9 @@ class SmartDevice (
         result = 31 * result + price
         return result
     }
-
-
 }
+
+
+// see notes for more info on "data classes" ; at a first glance they seem to be like "records" in java
+data class User(val id: Int, val name: String)
+
