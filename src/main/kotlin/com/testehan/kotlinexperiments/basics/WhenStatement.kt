@@ -3,6 +3,8 @@ package com.testehan.kotlinexperiments.basics
 fun main() {
     val gender = "f"
 
+    //Note that all branch conditions are checked sequentially until one of them is satisfied.
+    // So only the first suitable branch is executed.
     when(gender){                       // the "switch" from java is "when" in kotlin
         "f" -> println("female")
         "m" -> println("male")

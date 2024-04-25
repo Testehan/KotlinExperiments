@@ -10,9 +10,14 @@ fun main() {
 
     // this list is modifiable
 //    val animals = mutableListOf("cow","pig","chicken","dog",4)  // not recommanded to use these generic lists
-    val animals = mutableListOf<String>("cow","pig","chicken","dog")  // now this only allows strings
+    val animals = mutableListOf("cow","pig","chicken","dog")  // now this only allows strings
     animals.remove("dog")
     println(animals)
     animals.add("tortoise")
+    println("The first animal is ${animals[0]}")
+    println("The first animal is ${animals.first()}")
+    println("The last animal is ${animals.last()}")
+
+    print("whale" in animals)           // false
 
 }
