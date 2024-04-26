@@ -1,5 +1,8 @@
 package com.testehan.rsocketchat.service
 
+import com.testehan.rsocketchat.extensions.asDomainObject
+import com.testehan.rsocketchat.extensions.asViewModel
+import com.testehan.rsocketchat.extensions.mapToViewModel
 import com.testehan.rsocketchat.model.MessageVM
 import com.testehan.rsocketchat.model.UserVM
 import com.testehan.rsocketchat.repository.ContentType
@@ -14,16 +17,12 @@ import java.net.URL
 class PersistentMessageService(val messageRepository: MessageRepository) : MessageService {
 
     override fun latest(): List<MessageVM> =
-        messageRepository.findLatest()
-            .map { with(it) { MessageVM(content, UserVM(username, URL(userAvatarImageLink)), sent, id) } }
+        messageRepository.findLatest().mapToViewModel()
 
     override fun after(lastMessageId: String): List<MessageVM> =
-        messageRepository.findLatest(lastMessageId)
-            .map { with(it) { MessageVM(content, UserVM(username, URL(userAvatarImageLink)), sent, id) } }
+        messageRepository.findLatest(lastMessageId).mapToViewModel()
 
     override fun post(message: MessageVM) {
-        messageRepository.save(
-            with(message) { Message(content, ContentType.PLAIN, sent, user.name, user.avatarImageLink.toString()) }
-        )
+        messageRepository.save( message.asDomainObject())
     }
 }
