@@ -2,7 +2,10 @@ HELP.md
 target/
 build/
 .gradle
-!.mvn/wrapper/maven-wrapper.jar
+gradle/
+gradlew
+gradlew.bat
+.mvn/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
