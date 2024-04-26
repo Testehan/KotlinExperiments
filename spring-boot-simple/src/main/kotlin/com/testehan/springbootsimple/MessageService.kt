@@ -3,6 +3,7 @@ package com.testehan.springbootsimple
 import org.springframework.jdbc.core.JdbcTemplate
 import org.springframework.stereotype.Service
 import java.util.*
+import org.springframework.jdbc.core.query
 
 @Service
 class MessageService(val db: JdbcTemplate) {
@@ -13,6 +14,11 @@ class MessageService(val db: JdbcTemplate) {
     fun findMessages(): List<Message> = db.query("select * from messages", { response, _ ->
         Message(response.getString("id"), response.getString("text"))
     })
+
+    // Dan: above function can be simplified as the one from below is...i find the below one tricky to read right now
+    fun findMessageById(id: String): List<Message> = db.query("select * from messages where id = ?", id) { response, _ ->
+        Message(response.getString("id"), response.getString("text"))
+    }
 
     fun save(message: Message) {
         val id = message.id ?: UUID.randomUUID().toString()
